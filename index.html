@@ -8,17 +8,61 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script defer src="script.js"></script>
     <title>Tip Calculator App</title>
 </head>
 <body>
     <div class="main">
-        <section class="content">
-            <div class="heading"></div>
-            <div class="calculator"></div>
+        <section>
+            <div class="heading">
+                <h3>Spli<br>tter</h3>
+            </div>
+            <div class="calculator">
+                <section>
+                    <form>
+                        <div id="left">
+                            <div>
+                                <label for="bill">Bill</label>
+                                <object data="icons/icon-dollar.svg"></object>
+                                <input id="bill" name="bill" type="text" placeholder="0">
+                            </div>
+                            <div>
+                                <label>Select Tip %</label>
+                                <div id="buttons">
+                                    <button class="percentage" value="0.05">5%</button>
+                                    <button class="percentage" value="0.1">10%</button>
+                                    <button class="percentage" value="0.15">15%</button>
+                                    <button class="percentage" value="0.25">25%</button>
+                                    <button class="percentage" value="0.5">50%</button>
+                                    <button>Custom</button>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="people">Number of people</label>
+                                <object data="icons/icon-person.svg"></object>
+                                <input id="people" name="people" type="text" placeholder="0">
+                            </div>
+                        </div>
+                        <div id="right">
+                                <div>
+                                    <p class="label">Tip Amount<br><span>/ person</span></p>
+                                    <span>
+                                        <p id="tipperson">$0.00</p>
+                                    </span>
+                                </div>
+                                <div>
+                                    <p class="label">Total<br><span>/ person</span></p>
+                                    <span>
+                                        <p id="tiptotal">$0.00</p>
+                                    </span>
+                                </div>
+                            <button type="reset" value="Reset">Reset</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
         </section>
     </div>
-
-    <script src="script.js"></script>
 </body>
 </html>

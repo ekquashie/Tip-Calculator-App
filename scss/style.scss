@@ -1,7 +1,10 @@
+// Mixins
+@import 'mixins';
+
 // Colours
-$strrongcyan: hsl(172, 67%, 45%);
+$strongcyan: hsl(172, 67%, 45%);
 $darkcyan: hsl(183, 100%, 15%);
-$darkgrayishcyan: hsl(183, 100%, 15%);
+$darkgrayishcyan: hsl(186, 14%, 43%);
 $darkgrayishcyan1: hsl(184, 14%, 56%);
 $lightgrayishcyan: hsl(185, 41%, 84%);
 $lightgrayishcyan1: hsl(189, 41%, 97%);
@@ -24,6 +27,7 @@ html, body {
 
 input {
     font-size: 24px;
+    color: $darkcyan;
 }
 
 .main {
@@ -31,14 +35,168 @@ input {
     height: 100%;
     width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
 
     section {
+        width: 60%;
+        height: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
 
-        .calculator {
+            .heading {
+                text-transform: uppercase;
+                color: $darkgrayishcyan;
+                margin-bottom: 60px;
+                letter-spacing: 0.5em;
+                font-size: 16px;
+            }
+            .calculator {
+                width: 100%;
+                height: 400px;
+                background-color: white;
+                border-radius: 20px;
 
+                section {
+                    height: 100%;
+                    width: 100%;
+
+                    form {
+                        width: 100%;
+                        height: 100%;
+                        padding: 30px;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+
+                    #left {
+                        width: 48%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: flex-start;
+                        justify-content: space-between;
+                        padding: 10px 0;
+
+                        div {
+                            width: 100%;
+
+                            object {
+                                position: absolute;
+                                transform: translateY(50%);
+                                margin-left: 10px;
+                            }
+                            label {
+                                @include labelLeft;
+                                margin-bottom: 5px;
+                            }
+                            input {
+                                @include input;
+                                text-align: right;
+                                padding-right: 10px;
+                                font-weight: 700;
+                                cursor: pointer;
+
+                                &::placeholder {
+                                    color: $darkgrayishcyan1;
+                                }
+                            }
+                            &:nth-child(1) {
+                                position: relative;
+                            }
+                            &:nth-child(2) {
+                                width: 100%;
+
+                                div {
+                                    width: 100%;
+                                }
+                                .active {
+                                    background-color: $strongcyan;
+                                    color: $darkcyan;
+                                }
+                                button {
+                                    width: 31.5%;
+                                    padding: 5px 0;
+                                    background-color: $darkcyan;
+                                    border: none;
+                                    border-radius: 5px;
+                                    margin-bottom: 10px;
+                                    color: white;
+                                    font-weight: 400;
+                                    font-size: 16px;
+                                    text-align: center;
+                                    cursor: pointer;
+
+                                    &:nth-child(6) {
+                                        background-color: $lightgrayishcyan1;
+                                        color: $darkgrayishcyan;
+                                        font-weight: 700;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    #right {
+                        width: 48%;
+                        height: 100%;
+                        border-radius: 15px;
+                        background-color: $darkcyan;
+                        padding: 40px 20px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        div {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            align-items: center;
+
+                            span {
+                                font-size: 30px;
+                                font-weight: 700;
+                                color: $strongcyan;
+                                display: flex;
+                                align-items: center;
+
+                                object {
+                                    color: $strongcyan;
+                                }
+                            }
+
+                            .label {
+                                @include labelRight;
+
+                                span {
+                                    font-size: 12px;
+                                    color: $darkgrayishcyan1;
+                                }
+                            }
+                            &:nth-child(1) {
+                                margin-bottom: 10px;
+                            }
+                        }
+
+                        button {
+                            width: 100%;
+                            background-color: $strongcyan;
+                            opacity: 0.3;
+                            text-transform: uppercase;
+                            color: $darkcyan;
+                            padding: 10px 10px;
+                            border: none;
+                            border-radius: 5px;
+                            font-weight: 700;
+                            font-size: 16px;
+                            text-align: center;
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+            }
         }
     }
 }

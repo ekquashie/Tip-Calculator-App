@@ -1,0 +1,20 @@
+@mixin labelLeft{
+    display: block;
+    color: $darkgrayishcyan;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+@mixin input {
+    background-color: $lightgrayishcyan1;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+}
+
+@mixin labelRight {
+    display: block;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+}
